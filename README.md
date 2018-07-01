@@ -1,6 +1,7 @@
-Coding challenge?
+# React Native - Coding challenge?
 
-==================================
+
+We're looking for talent people who can build awesome products, so we created a set of open-ended challenges to test our candidates' overall developer skills. If you're interested in joining our team, complete this challenge and submit your pull request.
 
 The coding challenge is optional if you already have some code that you're proud of and can share with us.
 
@@ -47,7 +48,7 @@ The aspects of your code we will assess include:
 
 Bonus point (those items are optional):
 
-* **git-friendly**: does the code include the right comments for commit? 
+* **git-friendly**: does the code include the right comments for every commit? 
 * **Production-readiness**: does the code include monitoring? logging? proper error handling?
 
 
