@@ -37,11 +37,11 @@ class AppLoading extends Component {
 
   migrateFromAsyncStorage = async () => {
     const keys = [
-      '@ELTWALLET:address',
-      '@ELTWALLET:availableTokens',
-      '@ELTWALLET:defaultToken',
-      '@ELTWALLET:pinCode',
-      '@ELTWALLET:privateKey',
+      '@WALLET:address',
+      '@WALLET:availableTokens',
+      '@WALLET:defaultToken',
+      '@WALLET:pinCode',
+      '@WALLET:privateKey',
     ];
 
     const [
