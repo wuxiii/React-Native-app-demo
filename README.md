@@ -1,3 +1,6 @@
+## Logic Flow
+![](https://raw.githubusercontent.com/Unity-Labs-Development/React-Native-app-demo/master/assets/rnapp.png)
+
 ## Local development
 
 Make sure you have `react-native-cli` installed.
