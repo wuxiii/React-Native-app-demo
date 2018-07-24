@@ -35,8 +35,7 @@ export default class WalletUtils {
    * Generate an Ethereum wallet
    */
   static generateWallet() {
-
-
+    return EthereumJsWallet.generate();
   }
 
   /**
@@ -44,10 +43,7 @@ export default class WalletUtils {
    *
    * @param {String} privateKey
    */
-  static restoreWallet(privateKey) {
-
-
-  }
+  static restoreWallet(privateKey) {}
 
   /**
    * Reads an EthereumJSWallet instance from Redux store
@@ -170,8 +166,6 @@ export default class WalletUtils {
    */
   static getEthTransactions() {
     const { walletAddress } = store.getState();
-
-
   }
 
   /**
@@ -181,8 +175,6 @@ export default class WalletUtils {
    */
   static async getERC20Transactions(contractAddress, decimals) {
     const { walletAddress } = store.getState();
-
-
   }
 
   /**
@@ -191,10 +183,13 @@ export default class WalletUtils {
    * @param {Object} token
    */
   static getBalance({ contractAddress, symbol, decimals }) {
+    console.log(contractAddress);
+    console.log(symbol);
+    console.log(decimals);
+
     if (symbol === 'ETH') {
       return this.getEthBalance();
     }
-
     return this.getERC20Balance(contractAddress, decimals);
   }
 
@@ -205,8 +200,7 @@ export default class WalletUtils {
     const { walletAddress } = store.getState();
 
     const web3 = new Web3(this.getWeb3HTTPProvider());
-
-
+    console.log(web3);
   }
 
   /**
@@ -219,8 +213,6 @@ export default class WalletUtils {
     const { walletAddress } = store.getState();
 
     const web3 = new Web3(this.getWeb3HTTPProvider());
-
-
   }
 
   /**
@@ -255,8 +247,6 @@ export default class WalletUtils {
    */
   static sendETHTransaction(toAddress, amount) {
     const web3 = this.getWeb3Instance();
-
-
   }
 
   /**
@@ -267,7 +257,5 @@ export default class WalletUtils {
    */
   static sendERC20Transaction(contractAddress, decimals, toAddress, amount) {
     const web3 = this.getWeb3Instance();
-
-
   }
 }

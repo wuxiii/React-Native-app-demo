@@ -112,7 +112,9 @@ class CreateWallet extends Component {
             !this.props.navigation.getParam('editMode', false) &&
             !this.props.navigation.getParam('migrationMode', false)
           ) {
-            WalletUtils.generateWallet();
+            let wallet = await WalletUtils.generateWallet();
+            console.log(wallet);
+            WalletUtils.storeWallet(wallet);
           }
 
           setTimeout(() => {
