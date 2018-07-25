@@ -169,7 +169,7 @@ class WalletHome extends Component {
   };
 
   jumpToTest() {
-    if (!this.props.isLogin) {
+    if (this.props.isLogin) {
       this.props.navigation.navigate('tabs');
     } else {
       this.props.navigation.navigate('login');
