@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AppState, Alert, SafeAreaView, StyleSheet, View } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { GradientBackground, Text } from '../../components';
+import { GradientBackground, Text, PrimaryButton } from '../../components';
 import {
   BalanceRow,
   CallToAction,
@@ -168,6 +168,14 @@ class WalletHome extends Component {
     WalletUtils.loadTokensList();
   };
 
+  jumpToTest() {
+    if (!this.props.isLogin) {
+      this.props.navigation.navigate('tabs');
+    } else {
+      this.props.navigation.navigate('login');
+    }
+  }
+
   render() {
     return (
       <GradientBackground>
@@ -208,6 +216,7 @@ class WalletHome extends Component {
               )}
             </View>
           </View>
+          <PrimaryButton onPress={() => this.jumpToTest()} text="Entry" />
           <Footer
             onReceivePress={() => this.props.navigation.navigate('Receive')}
             onSendPress={() =>
@@ -226,6 +235,7 @@ const mapStateToProps = state => ({
   callToActionDismissed: state.callToActionDismissed,
   selectedToken: state.selectedToken,
   walletAddress: state.walletAddress,
+  isLogin: state.isLogin,
 });
 
 const mapDispatchToProps = dispatch => ({

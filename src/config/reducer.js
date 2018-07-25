@@ -10,6 +10,7 @@ import {
   SET_PIN_CODE,
   SET_PRIVATE_KEY,
   SET_WALLET_ADDRESS,
+  SIGN_IN,
 } from './actionTypes';
 import { defaultTokens } from '../utils/constants';
 
@@ -18,6 +19,7 @@ const defaultState = {
   callToActionDismissed: false,
   selectedToken: defaultTokens[0],
   network: 'mainnet',
+  isLogin: false,
 };
 
 const appReducer = (state = defaultState, action) => {
@@ -66,7 +68,6 @@ const appReducer = (state = defaultState, action) => {
         selectedToken: action.token,
       };
     case SET_NETWORK:
-
       return {
         ...state,
         network: action.network,
@@ -85,6 +86,12 @@ const appReducer = (state = defaultState, action) => {
       return {
         ...state,
         walletAddress: action.walletAddress,
+      };
+    case SIGN_IN:
+      return {
+        ...state,
+        sessionId: action.sessionId,
+        isLogin: true,
       };
     default:
       return state;

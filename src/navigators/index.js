@@ -15,6 +15,8 @@ import {
   WalletReceiveScreen,
   WalletSendScreen,
 } from '../screens';
+import tabs from './tabs';
+import login from '../screens/pages/login/loginPage';
 
 const WelcomeNavigator = createStackNavigator(
   {
@@ -65,6 +67,12 @@ const WalletMainNavigator = createStackNavigator(
     },
     TokenPicker: {
       screen: TokenPickerScreen,
+    },
+    tabs: {
+      screen: tabs,
+    },
+    login: {
+      screen: login,
     },
   },
   {

@@ -52,6 +52,8 @@ class WalletReceive extends Component {
   };
 
   render() {
+    const { walletAddress } = this.props;
+    console.log(this.props.walletAddress);
     return (
       <GradientBackground>
         <SafeAreaView style={styles.container}>
